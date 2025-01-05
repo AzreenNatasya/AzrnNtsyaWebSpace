@@ -1,0 +1,144 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    background-color: #DBAFA0;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #704264;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+header .logo {
+    font-size: 25px;
+    font-family: 'Bohemian Soul', cursive;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    margin: 0 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Sequel', sans-serif;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+/* Navigation hover effect */
+nav a:hover {
+    font-family: 'Magzo', sans-serif;
+    color: #704264;
+    font-weight: bold;
+    font-style: italic;
+    background-color: #BB8493;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* Home section styles */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 50px;
+}
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    border: 5px solid #BB8493;
+    width: 250px; /* Bigger profile picture */
+    height: 250px; /* Bigger profile picture */
+}
+
+.home-content {
+    text-align: left;
+    max-width: 600px; /* Ensure text doesn't stretch too wide */
+}
+
+.home-content h2.typing-text {
+    font-size: 14px;
+    color: #704264;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: 'Sequel', sans-serif;
+    text-align: justify;
+}
+
+/* Quote box styles */
+.quote-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.quote-box {
+    background-color: #BB8493;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quote-box p {
+    font-size: 14px;
+    color: white;
+    font-family: 'Sequel', sans-serif;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #704264;
+    font-size: 13px;
+    font-family: 'Cabin', sans-serif;
+}
+
+footer p {
+    margin: 10px;
+}
+
+/* Adjustments for audio, gap and alignment */
+audio {
+    display: none; /* Hide audio player */
+}
+
+.home {
+    gap: 30px; /* Reduced the gap to make it more centered */
+}
+
+nav {
+    margin-top: 20px;
+    padding-bottom: 10px; /* Increased the gap between the title and the options */
+}
+
+/* Audio player controls */
+audio {
+    margin: 20px auto;
+    display: block;
+}

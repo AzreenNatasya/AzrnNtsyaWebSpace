@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bohemian+Soul&family=Cabin&family=Magzo&family=Sequel&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Education</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Cabin', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Background Image Styling */
+        body {
+            background-image: url("images/purple_wallpaper.jpg");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        p, ul, li {
+            margin-bottom: 1.5em;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #704264;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .header-date-time {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        header {
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: #f1f1f1;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            font-family: 'Magzo', sans-serif;
+            color: #704264;
+            font-weight: bold;
+            font-style: italic;
+            background-color: #BB8493;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        nav a.active {
+            color: #ffffff;
+            background-color: #704264;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* Title and Images */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 2em;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            object-fit: cover;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .image-gallery img:hover {
+            opacity: 0.7;
+        }
+
+        figcaption {
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* PDF Links */
+        .pdf-links a {
+            color: #704264;
+            text-decoration: none;
+        }
+
+        .pdf-links a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        /* Awards and Achievements List */
+        ul {
+            list-style: disc;
+            padding-left: 40px;
+            margin-left: 0;
+        }
+
+        .education, .awards, .pdf-links {
+            margin: 0 10%;
+            padding: 20px;
+            border: 2px solid #704264;
+            border-radius: 10px;
+            background-color: #BB8493;
+            color: #704264;
+        }
+
+        .education li, .awards li {
+            color: #704264;
+        }
+
+        .awards, .pdf-links {
+            margin-bottom: 3em;
+        }
+
+        .awards ul li {
+            margin-bottom: 2.5em;
+        }
+
+        .awards b {
+            font-weight: bold;
+            color: #704264;
+        }
+
+        .education b {
+            font-weight: bold;
+            color: #704264;
+        }
+
+        .awards h2 {
+            color: #704264;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #704264;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 13px;
+        }
+
+        .pdf-links {
+            padding-bottom: 60px;
+        }
+
+        .awards ul li, .education ul li {
+            margin-bottom: 0.5em;
+        }
+
+        .awards li > ul, .education li > ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .pdf-links ul {
+            list-style-type: square;
+        }
+
+        .awards > li, .education > li {
+            list-style-type: none;
+        }
+
+        audio {
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* Modal Styling */
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {opacity: 0.7;}
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with "My Education" -->
+    <header>
+        <h1>My Education</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="interest.html">Interest</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div id="header-date-time" class="header-date-time"></div> <!-- Date, time, and day will be displayed here -->
+
+    <!-- Audio (plays continuously across pages) -->
+    <audio id="background-audio" autoplay loop controls>
+        <source src="audios/relaxing-piano-music.mp3" type="audio/mp3">
+    </audio>
+    
+    <!-- Image Gallery with Modal functionality -->
+<div class="image-gallery">
+    <figure>
+        <img class="modalImg" src="images/skassunta_primarysch.jpg" alt="Primary School SK Assunta">
+        <figcaption>Figure 1: SK Assunta</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="images/smkassunta_secondarysch.jpg" alt="Secondary School SMK Assunta">
+        <figcaption>Figure 2: SMK Assunta</figcaption>
+    </figure>
+    <figure>
+        <img class="modalImg" src="images/uitm_rembau.jpg" alt="UiTM Rembau Campus">
+        <figcaption>Figure 3: UiTM Rembau</figcaption>
+    </figure>
+</div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function updateHeaderDateTime() {
+            const dateTimeElement = document.getElementById('header-date-time');
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayName = days[now.getDay()];
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString();
+
+            dateTimeElement.innerHTML = `${dayName}, ${date}, ${time}`;
+        }
+
+        setInterval(updateHeaderDateTime, 1000);
+        updateHeaderDateTime();
+    </script>
+
+</div>
+<!-- Awards and Achievements -->
+<div class="awards">
+    <h2>Awards and Achievements</h2>
+    <li><b>Universiti Teknologi Mara Campus Rembau, Negeri Sembilan</b>
+        <ul>
+            <li>Diploma in Information Management</li>
+            <li>Current CGPA: 3.46</li>
+        </ul>
+    </li>
+    <li><b>Assunta Secondary School, Petaling Jaya, Selangor</b>
+        <ul>
+            <li>Malaysian Higher School Certificate (SPM)</li>
+            <li>Art Stream SPM: 6A</li>
+        </ul>
+    </li>
+    <!-- Year 2023 -->
+    <p><b>2023:</b></p>
+    <ul>
+        <li>Representative in “Fueled Media: Creative and Innovation Competition on Communication Issue” for co-curricular, presenting about a specialized product called the “Introvert Badge” to encourage introverted people to work and communicate with others in comfort throughout their daily life.</li>
+    </ul>
+    <!-- Year 2022 -->
+    <p><b>2022:</b></p>
+    <ul>
+        <li>Representative for Program Kepimpinan involving the Angkatan Pertahanan Awam Malaysia and Equine Rembau.</li>
+        <li>Representative in Kawad Kaki and Orienteering in co-curricular.</li>
+        <li>Achieved several personal goals: Earning an A in a course subject, volunteering for the team in organizing online events, and enhancing the photography skill of mastering the exposure triangle in photography.</li>
+    </ul>
+    <!-- Year 2019 -->
+    <p><b>2019:</b></p>
+    <ul>
+        <li>Held the position of “Penolong Setiausaha” for Persatuan Pendidikan Islam.</li>
+        <li>Representative in Kawad Kaki Badan Beruniform Renjer for Kejohanan Olahraga Tahunan.</li>
+        <li>Participated in PJFair organized by Dataran Petaling Jaya.</li>
+        <li>Awarded for achievement as one of the students in the Top 15 who excelled in the final examination.</li>
+    </ul>
+</div>
+<!-- PDF Links -->
+<div class="pdf-links">
+    <h2>Certificates</h2>
+    <ul>
+        <li><a href="pdf/tokohnilamharapan_certificate.PDF" target="_blank">Tokoh Nilam Harapan Certificate</a></li>
+        <li><a href="pdf/setiausaha_certificate.PDF" target="_blank">Setiausaha Certificate</a></li>
+        <li><a href="pdf/nilamgangsa_certificate.PDF" target="_blank">Nilam Gangsa Certificate</a></li>
+        <li><a href="pdf/juruaudit_certificate.PDF" target="_blank">Juru Audit Certificate</a></li>
+        <li><a href="pdf/kawadkaki_certificate.PDF" target="_blank">Kawad Kaki Certificate</a></li>
+    </ul>
+</div>
+<script>
+        // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the modal image and caption
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    // Get all images with the class 'modalImg'
+    var imgs = document.querySelectorAll(".modalImg");
+
+    // Loop through each image and add an event listener for clicks
+    imgs.forEach(img => {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;  // Set the source of the modal image to the clicked image
+        captionText.innerHTML = this.alt;  // Set the caption to the alt text of the clicked image
+    }
+    });
+
+    // Get the close button (span) to close the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Close the modal when the close button is clicked
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy;AzrnNtsya2025</p>
+    </footer>
+</body>
+</html>

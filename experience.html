@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Bohemian+Soul&family=Cabin&family=Magzo&family=Sequel&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Experience</title>
+    
+    <style>
+        /* General styling to match home.html and education.html */
+        body {
+            font-family: 'Cabin', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay at the bottom */
+        }
+        /* Background Image Styling */
+        body {
+            background-image: url("images/purple_wallpaper.jpg");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: 'Cabin', sans-serif;
+        }
+        p, ul, li {
+            margin-bottom: 1.5em;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #704264;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .header-date-time {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-family: 'Cabin', sans-serif;
+        }
+        header {
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: #f1f1f1;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            font-family: 'Magzo', sans-serif;
+            color: #704264;
+            font-weight: bold;
+            font-style: italic;
+            background-color: #BB8493;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        nav a.active {
+            color: #ffffff;
+            background-color: #704264;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* Table styling for images and captions */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 3px solid #704264;
+        }
+
+        table td, table th {
+            padding: 10px;
+            border: 3px solid #704264;
+            vertical-align: middle;
+        }
+
+        /* Image styles - Rectangular with black border for table images */
+        table img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid black;
+        }
+
+        /* Image styles for Figures 4 and 5 (Square with black border and adjusted size) */
+        .experience-content figure img {
+            width: 200px; /* Set width to 200px */
+            height: 200px; /* Set height to 200px for square shape */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            border: 3px solid black; /* Black border */
+            margin-bottom: 5px; /* Reduced margin to bring image and paragraph closer */
+        }
+
+        /* Caption styling */
+        figcaption {
+            font-style: italic;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Styling for "My Experience" section */
+        .experience-container {
+            text-align: center;
+            margin-top: 40px;
+            padding: 0 20px;
+            flex: 1; /* Take up remaining space, so footer stays at the bottom */
+        }
+
+        .experience-container p {
+            text-align: justify;
+            margin-bottom: 10px; /* Reduced margin between paragraphs */
+        }
+
+        /* Styling for paragraph layout */
+        .experience-content {
+            display: flex;
+            justify-content: center; /* Center the content */
+            gap: 15px; /* Adjusted the gap between the figure and paragraph */
+            align-items: flex-start;
+            margin-bottom: 5px; /* Reduced margin between image and paragraph */
+        }
+
+        .experience-content .text {
+            flex: 1;
+            max-width: 50%;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #704264;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 13px;
+        }
+
+        /* Spacing for the images and paragraph */
+        figure {
+            margin-bottom: 20px; /* Space between image and paragraph */
+        }
+
+        /* Audio player controls */
+        audio {
+            margin: 20px auto;
+            display: block;
+        }
+        /* Ensure the body takes up full height, but footer remains at the bottom */
+        body {
+            font-family: 'Cabin', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay at the bottom */
+        }
+
+        /* Ensure the content section grows and provides space for the footer */
+        .experience-container {
+            text-align: center;
+            margin-top: 40px;
+            padding: 0 20px;
+            flex: 1; /* Allow it to take remaining space */
+            margin-bottom: 80px; /* Ensure there’s space between content and footer */
+        }
+        /* Ensure the content aligns properly and is centered */
+        .experience-content {
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            gap: 15px; /* Adjust the gap between image and text */
+            align-items: flex-start; /* Align items at the top */
+            margin-bottom: 20px; /* Ensure space between paragraphs */
+        }
+
+        /* Ensure the image has a consistent size and align with text */
+        .experience-content figure {
+            margin: 0; /* Remove default margin for alignment */
+            display: inline-block; /* Align with text */
+        }
+
+        /* Style for the text to maintain alignment with the image */
+        .experience-content .text {
+            flex: 1;
+            max-width: 50%; /* Limit text width */
+            text-align: justify;
+            padding-top: 20px; /* Optional: adds some padding to the text to align vertically with the image */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header with white text on a dark background -->
+    <header>
+        <h1>My Experience</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="interest.html">Interest</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div id="header-date-time" class="header-date-time"></div> <!-- Date and time will be displayed here -->
+
+    <script>
+        function updateHeaderDateTime() {
+            const dateTimeElement = document.getElementById('header-date-time');
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayName = days[now.getDay()];
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString();
+
+            dateTimeElement.innerHTML = `${dayName}, ${date}, ${time}`;
+        }
+
+        setInterval(updateHeaderDateTime, 1000);
+        updateHeaderDateTime();
+    </script>
+
+    <!-- Audio (plays continuously across pages) -->
+    <audio id="background-audio" autoplay loop controls>
+        <source src="audios/relaxing-piano-music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Experience Section -->
+    <div class="experience-container">
+
+        <!-- First Paragraph -->
+        <div class="experience-content">
+            <figure>
+                <img src="images/kpj_damansara.jpg" alt="KPJ Damansara Specialist Hospital">
+                <figcaption>Figure 4: KPJ Damansara Specialist Hospital</figcaption>
+            </figure>
+            <div class="text">
+                <p>
+                    In July-September 2024, I had the opportunity to intern in the Medical Record Department at KPJ Damansara Specialist Hospital, where I applied my information management skills in a practical healthcare setting, learning about the importance of accuracy and confidentiality in medical documentation. 
+                    This internship, along with my diverse skills and interests, has given me the confidence to take on new challenges and continue learning in a wide range of fields.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second Paragraph -->
+        <div class="experience-content">
+            <figure>
+                <img src="images/hims_department.jpg" alt="Health Information Management Services (HIMS) Department">
+                <figcaption>Figure 5: Health Information Management Services</figcaption>
+            </figure>
+            <div class="text">
+                <p>
+                    Looking ahead, I am excited to continue expanding my knowledge and skills, whether through academic pursuits or real-world experiences. My internship in the Medical Record Department at KPJ Damansara Specialist Hospital in 2024 provided valuable insights into the intersection of information management and healthcare, further reinforcing my commitment to leveraging my skills in diverse fields. 
+                    Beyond my academic and professional endeavors, I remain deeply committed to the importance of meaningful self-expression, whether through writing, art, or simply reflecting on the world around me. I believe that every quiet moment spent in contemplation adds depth to our understanding of the world and ourselves, and through this platform, I hope to continue sharing that journey with others. 
+                    My experiences so far have taught me that growth comes from embracing both the quiet moments of introspection and the challenges that push us out of our comfort zones.
+                </p>
+            </div>
+        </div>
+        <h1>Internship Highlights</h1>
+        <table>
+            <tr>
+                <th>Facilities</th>
+                <th>Tasks</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/receipt_counter.jpg" alt="ground_floorintern">
+                    <figcaption>Figure 6: Receipt Counter</figcaption>
+                </td>
+                <td>
+                    At the ground floor, a receipt needs to be made for both deposit and final bill. When a patient pays a deposit or makes an initial payment for medical services, it serves as proof. This payment usually guarantees a future appointment or pays for initial costs. After all medical services have been delivered, the patient receives a detailed summary called the final bill. It lists all of the expenses paid for the course of treatment, including any modifications for deposits or insurance coverage.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/scanner_printing.jpg" alt="scanner_printing">
+                    <figcaption>Figure 7: Scanner for Printing</figcaption>
+                </td>
+                <td>
+                    Scanning is a process of converting paper-based documents into digital formats. This is a key step in the management of patient records. With digital records, accessing and sharing patient information becomes quicker, more reliable, and more secure. The ability to scan and print documents effectively also ensures that important patient records are maintained properly for legal and medical purposes.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/trolly_intern.jpg" alt="trolly_intern">
+                    <figcaption>Figure 8: Trolley for Medical Records</figcaption>
+                </td>
+                <td>
+                    The trolley is used to collect medical records from other departments so that the medical report department can proceed with coding, reporting, indexing, and tracking processes of the records.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/ivf_records.jpg" alt="ivf_records">
+                    <figcaption>Figure 9: IVF Records</figcaption>
+                </td>
+                <td>
+                    The IVF records include patient history, diagnostic results, treatment protocols, medication details, embryology data, and outcome reports. During my internship, I was responsible for managing and storing IVF records, which also enabled data analysis for research and quality improvement in fertility care.
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <footer>
+        <p>&copy;AzrnNtsya2025</p>
+    </footer>
+
+    <script>
+        // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the modal image and caption
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    // Get all images with the class 'modalImg'
+    var imgs = document.querySelectorAll(".modalImg");
+
+    // Loop through each image and add an event listener for clicks
+    imgs.forEach(img => {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;  // Set the source of the modal image to the clicked image
+        captionText.innerHTML = this.alt;  // Set the caption to the alt text of the clicked image
+    }
+    });
+
+    // Get the close button (span) to close the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Close the modal when the close button is clicked
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+    </script>
+</body>
+</html>
