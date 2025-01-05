@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Bohemian+Soul&family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome to My Personal Space!</title>
+
+    <style>
+        /* Background Image Styling */
+        body {
+            background-image: url("gifs/cloudsanime.gif");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: 'Cabin', sans-serif;
+        }
+        
+        .header-date-time {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        header {
+            position: relative;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            height: 100%;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Flexbox Styling for Center Alignment */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            height: 50vh;
+        }
+
+        .home-img {
+            margin: 0;
+        }
+
+        .home-content {
+            margin: 0;
+            max-width: 500px;
+        }
+
+        .quote-section {
+            margin-top: 20px;
+        }
+
+        .quote-box {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #704264;
+            border-left: 5px solid #704264;
+            padding-left: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .home {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .home-img {
+                margin-bottom: 20px;
+            }
+
+            .home-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio (plays continuously across pages) -->
+    <audio id="background-audio" autoplay loop aria-label="Background music">
+        <source src="audios/relaxing-piano-music.mp3" type="audio/mp3">
+    </audio>
+
+    <header>
+        <a href="#" class="logo" aria-label="Homepage">AzrnNtsya's Personal Space!</a>
+        <nav aria-label="Main Navigation">
+            <a href="home.html" class="active" aria-label="Home">Home</a>
+            <a href="education.html" aria-label="Education">Education</a>
+            <a href="experience.html" aria-label="Experience">Experience</a>
+            <a href="interest.html" aria-label="Interest">Interest</a>
+            <a href="contact.html" aria-label="Contact">Contact</a>
+        </nav>
+        <div id="header-date-time" class="header-date-time"></div>
+    
+    </header>
+    <!-- Audio (plays continuously across pages) -->
+    <audio id="background-audio" autoplay loop controls>
+        <source src="audios/relaxing-piano-music.mp3" type="audio/mp3">
+    </audio>
+    
+    <section class="home">
+        <div class="home-img">
+            <div class="container">
+                <img src="images/profile_picture.jpg" alt="Azreen Natasya" class="image">
+                <div class="overlay">
+                    <div class="text">Hello World!</div>
+                </div>
+            </div>
+        </div>
+        <div class="home-content">
+            <h2 class="typing-text">
+                An introverted student who takes great satisfaction in the peaceful pursuit of knowledge that is frequently overlooked in the hustle and bustle of daily life. 
+                Through this website, I wish to share my student experience, education, interests, and connect with other introverts and curious minds that value the beauty of 
+                quiet reflection and the power of meaningful expression.
+            </h2>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <blockquote class="quote-box">
+            <p>"Your visions will become clear only when you can look into your own heart. Who looks outside, dreams; who looks inside, awakes. - Carl Jung"</p>
+        </blockquote>
+    </section>
+
+    <footer>
+        <p>&copy;AzrnNtsya2025</p>
+    </footer>
+
+    <script>
+        function updateHeaderDateTime() {
+            const dateTimeElement = document.getElementById('header-date-time');
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayName = days[now.getDay()];
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString();
+
+            dateTimeElement.innerHTML = `${dayName}, ${date}, ${time}`;
+        }
+
+        setInterval(updateHeaderDateTime, 1000);
+        updateHeaderDateTime();
+    </script>
+</body>
+</html>
